@@ -1,0 +1,54 @@
+<?php
+global $OUTPUT;
+
+?>
+<div id="crowdconfig">
+<table cellspacing="0" cellpadding="5">
+
+<tr valign="top" class="required">
+    <td align="right"><label for="crowd_server"><?php print_string('crowd_server', 'auth_crowd'); ?>: </label></td>
+    <td>
+        <input name="crowd_server" id="crowd_server" type="text" size="40" value="<?php echo $config->crowd_server ?>" />
+        <?php
+        if (isset($err['crowd_server'])) {
+            echo $OUTPUT->error_text($err['crowd_server']);
+        }
+        ?>
+    </td>
+
+</tr>
+<tr valign="top" class="required">
+    <td align="right"><label for="crowd_application_name"><?php print_string('crowd_application_name', 'auth_crowd'); ?>: </label></td>
+    <td>
+        <input name="crowd_application_name" id="crowd_application_name" type="text" size="40" value="<?php echo $config->crowd_application_name ?>" />
+        <?php
+        if (isset($err['crowd_application_name'])) {
+            echo $OUTPUT->error_text($err['crowd_application_name']);
+        }
+        ?>
+    </td>
+</tr>
+<tr valign="top" class="required">
+    <td align="right"><label for="crowd_application_password"><?php print_string('crowd_application_password', 'auth_crowd'); ?>: </label></td>
+    <td>
+        <input name="crowd_application_password" id="crowd_application_password" type="password" size="40" value="<?php echo $config->crowd_application_password ?>" />
+        <?php
+        if (isset($err['crowd_application_password'])) {
+            echo $OUTPUT->error_text($err['crowd_application_password']);
+        }
+        ?>
+    </td>
+</tr>
+<tr valign="top" class="required">
+    <td align="right"><label for="sync_cohorts"><?php print_string('sync_cohorts', 'auth_crowd'); ?>: </label></td>
+    <td>
+        <input name="sync_cohorts" id="sync_cohorts" type="checkbox" size="40" value="<?php echo $config->sync_cohorts ?>" />
+        <?php
+        if (isset($err['sync_cohorts'])) {
+            echo $OUTPUT->error_text($err['sync_cohorts']);
+        }
+        ?>
+    </td>
+</tr>
+</table>
+</div>
