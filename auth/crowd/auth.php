@@ -132,13 +132,13 @@ class auth_plugin_crowd extends auth_plugin_base {
         $allgroups = $this->crowd_client->listGroups();
 
         //remove outdated cohorts
-        foreach($current_cohorts as $cohort){
+        /* foreach($current_cohorts as $cohort){
             $cohort_exists = FALSE;
             foreach($allgroups->groups as $group){
                 if($group->name == $cohort->name) $cohort_exists = TRUE;
             }
             if(!$cohort_exists) $DB->delete_records_select("cohort", "name = ?", array($cohort->name));
-        }
+        } */
 
         //add any new cohorts
         foreach($allgroups->groups as $group){
